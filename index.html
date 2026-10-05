@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>PVEP · Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi</title>
+<link rel="icon" href="assets/logo-pvep.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <a class="logo" href="#tong-quan" aria-label="PVEP – trang tổng quan"><img src="assets/logo-pvep.png" alt="Petrovietnam PVEP"></a>
+    <nav aria-label="Phân hệ">
+      <span class="grp">Điều hành</span>
+      <a href="#tong-quan" data-v="tong-quan"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Tổng quan lãnh đạo</a>
+      <a href="#ban-do" data-v="ban-do"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.5 12h9M7 11l9.5-5.5M7 13l9.5 5.5"/></svg>Bản đồ quy trình</a>
+      <span class="grp">Tra cứu</span>
+      <a href="#danh-muc" data-v="danh-muc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>Danh mục thủ tục</a>
+      <a href="#ma-tran" data-v="ma-tran"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/></svg>Ma trận pháp lý</a>
+      <span class="grp">Quản trị</span>
+      <a href="#rui-ro" data-v="rui-ro"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17v.5"/></svg>Rủi ro &amp; xin ý kiến</a>
+      <a href="#ke-hoach" data-v="ke-hoach"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h7"/></svg>Kế hoạch hành động</a>
+      <a href="#quan-tri" data-v="quan-tri"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Dữ liệu &amp; nhật ký</a>
+    </nav>
+    <div class="foot" id="dataVer"></div>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <h1>BẢN ĐỒ TRÌNH TỰ VÀ THỦ TỤC PHÁP LÝ ĐẦU TƯ DỰ ÁN ĐIỆN GIÓ NGOÀI KHƠI<small>Tài liệu nội bộ PVEP · Ban Phát triển và Kinh doanh Sản phẩm mới</small></h1>
+      <div class="tools">
+        <label>Vai trò
+          <select id="role" aria-label="Vai trò thao tác">
+            <option value="viewer">Người xem</option>
+            <option value="editor">Người cập nhật</option>
+            <option value="admin">Quản trị viên</option>
+          </select>
+        </label>
+        <label>Người thao tác <input id="who" size="12" placeholder="Họ tên" aria-label="Họ tên người thao tác"></label>
+        <div class="zoom" role="group" aria-label="Cỡ chữ">
+          <button type="button" id="zMinus" aria-label="Giảm cỡ chữ">A−</button>
+          <button type="button" id="zReset" aria-label="Cỡ chữ mặc định">A</button>
+          <button type="button" id="zPlus" aria-label="Tăng cỡ chữ">A+</button>
+        </div>
+      </div>
+    </header>
+    <div class="notice" id="notice">Dữ liệu mẫu có cấu trúc, ngày chốt 05/10/2026. Nội dung gắn “CẦN XÁC MINH” chưa được dùng làm căn cứ ra quyết định. Chế độ vai trò trên trình duyệt không thay thế phân quyền máy chủ.</div>
+
+    <!-- 1. TỔNG QUAN -->
+    <section class="view" id="v-tong-quan" aria-labelledby="h1v">
+      <div class="vhead"><div><h2 id="h1v">Tổng quan lãnh đạo</h2><p>Tình trạng căn cứ pháp lý và tiến độ của các đầu việc, theo bộ lọc bên dưới.</p></div></div>
+      <div class="filters" id="fOverview"></div>
+      <div class="kpis" id="kpis"></div>
+      <div class="card" style="margin-bottom:16px">
+        <h3>Hành trình đầu tư theo 6 nhánh</h3>
+        <div class="legend" id="legend1" style="margin-bottom:12px"></div>
+        <div class="mini" id="mini"></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><h3>05 việc ưu tiên</h3><ul class="list" id="prio"></ul></div>
+        <div class="card"><h3>Cổng quyết định gần nhất</h3><ul class="list" id="gates"></ul></div>
+      </div>
+    </section>
+
+    <!-- 2. BẢN ĐỒ -->
+    <section class="view" id="v-ban-do" aria-labelledby="h2v">
+      <div class="vhead"><div><h2 id="h2v">Bản đồ quy trình pháp lý</h2><p>Sơ đồ từ trái sang phải: gốc là cơ hội đầu tư, mỗi nhánh là một giai đoạn, mỗi nút là một thủ tục hoặc đầu việc. Bấm vào nút để xem chi tiết; bấm vào nhánh để thu gọn hoặc mở rộng.</p></div>
+        <div style="display:flex; gap:8px"><button class="btn sm" id="expandAll">Mở rộng tất cả</button><button class="btn sm" id="collapseAll">Thu gọn tất cả</button></div></div>
+      <div class="filters" id="fTree"></div>
+      <div class="legend" id="legend2" style="margin-bottom:12px"></div>
+      <div class="treewrap"><div id="tree"></div></div>
+    </section>
+
+    <!-- 3. DANH MỤC -->
+    <section class="view" id="v-danh-muc" aria-labelledby="h3v">
+      <div class="vhead"><div><h2 id="h3v">Danh mục thủ tục chi tiết</h2><p>Tra cứu theo từ khóa và bộ lọc. Bấm một dòng để mở khung chi tiết.</p></div>
+        <button class="btn" id="expCatalog">Xuất CSV danh mục đang lọc</button></div>
+      <div class="fbar"><div class="search"><label class="sr-only" for="qCat">Tìm thủ tục</label><input id="qCat" type="search" placeholder="Tìm theo mã, tên, cơ quan, căn cứ (ví dụ: 272/2026, khảo sát, Điều 28)…"></div><span class="count" id="cntCat"></span></div>
+      <div class="filters" id="fCat"></div>
+      <div class="tbl"><table class="wide" id="tCat"></table></div>
+    </section>
+
+    <!-- 4. MA TRẬN -->
+    <section class="view" id="v-ma-tran" aria-labelledby="h4v">
+      <div class="vhead"><div><h2 id="h4v">Ma trận pháp lý</h2><p>Văn bản theo nhóm chủ đề, điều khoản liên quan, tác động với PVEP và cảnh báo hiệu lực, kiểm chứng.</p></div>
+        <button class="btn" id="expMatrix">Xuất CSV ma trận</button></div>
+      <div class="alerts" id="vbAlerts"></div>
+      <div class="tabs" role="tablist" id="mTabs">
+        <button role="tab" data-t="matrix" aria-selected="true">Ma trận điều khoản</button>
+        <button role="tab" data-t="cmp" aria-selected="false">So sánh: đã rõ · khoảng trống</button>
+        <button role="tab" data-t="docs" aria-selected="false">Danh mục văn bản</button>
+      </div>
+      <div class="fbar"><div class="search"><label class="sr-only" for="qMat">Tìm trong ma trận</label><input id="qMat" type="search" placeholder="Tìm văn bản, điều khoản, nội dung…"></div><select id="fTopic" aria-label="Nhóm chủ đề"></select><span class="count" id="cntMat"></span></div>
+      <div id="mBody"></div>
+    </section>
+
+    <!-- 5. RỦI RO -->
+    <section class="view" id="v-rui-ro" aria-labelledby="h5v">
+      <div class="vhead"><div><h2 id="h5v">Rủi ro, khoảng trống pháp lý và nội dung cần xin ý kiến</h2><p>Mức tác động và khả năng xảy ra là đánh giá sơ bộ, cần Ban thống nhất trước khi báo cáo.</p></div>
+        <button class="btn pri" id="expAsk1">Xuất danh sách cần xin ý kiến</button></div>
+      <div class="grid2" style="margin-bottom:16px">
+        <div class="card"><h3>Bản đồ nhiệt: tác động × khả năng xảy ra</h3><div class="heat" id="heat"></div></div>
+        <div class="card"><h3>Theo cấp cần xin ý kiến</h3><ul class="list" id="askLvl"></ul></div>
+      </div>
+      <div class="fbar"><div class="search"><label class="sr-only" for="qRisk">Tìm rủi ro</label><input id="qRisk" type="search" placeholder="Tìm rủi ro…"></div>
+        <select id="fRGroup" aria-label="Nhóm rủi ro"></select><select id="fRLevel" aria-label="Cấp xin ý kiến"></select><span class="count" id="cntRisk"></span></div>
+      <div class="tbl"><table class="wide" id="tRisk"></table></div>
+    </section>
+
+    <!-- 6. KẾ HOẠCH -->
+    <section class="view" id="v-ke-hoach" aria-labelledby="h6v">
+      <div class="vhead"><div><h2 id="h6v">Kế hoạch hành động PVEP</h2><p>Quý IV/2026 và năm 2027. Thời hạn là đề xuất để Lãnh đạo xem xét, cập nhật khi được phê duyệt.</p></div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap"><button class="btn" id="expPlan">Xuất CSV kế hoạch</button><button class="btn pri" id="expAsk2">Xuất danh sách cần xin ý kiến</button></div></div>
+      <div class="tabs" role="tablist" id="pTabs">
+        <button role="tab" data-t="kanban" aria-selected="true">Kanban</button>
+        <button role="tab" data-t="gantt" aria-selected="false">Bảng tiến độ</button>
+        <button role="tab" data-t="over" aria-selected="false">Việc quá hạn</button>
+        <button role="tab" data-t="ask" aria-selected="false">Cần xin ý kiến</button>
+      </div>
+      <div class="fbar"><select id="fKy" aria-label="Kỳ"></select><select id="fOwner" aria-label="Đầu mối"></select><span class="count" id="cntPlan"></span></div>
+      <div id="pBody"></div>
+    </section>
+
+    <!-- 7. QUẢN TRỊ -->
+    <section class="view" id="v-quan-tri" aria-labelledby="h7v">
+      <div class="vhead"><div><h2 id="h7v">Dữ liệu và nhật ký cập nhật</h2><p>Nguồn dữ liệu, nhập/xuất tệp CSV, nhật ký thay đổi.</p></div></div>
+      <div class="grid2" style="margin-bottom:16px">
+        <div class="card"><h3>Phân quyền thao tác</h3>
+          <ul class="list">
+            <li><span class="code">Người xem</span><span class="t">Tra cứu, lọc, mở chi tiết, xuất CSV</span><span></span></li>
+            <li><span class="code">Người cập nhật</span><span class="t">Thêm quyền: sửa trạng thái thực hiện, tình trạng căn cứ, ghi chú; đổi tình trạng công việc</span><span></span></li>
+            <li><span class="code">Quản trị viên</span><span class="t">Thêm quyền: nhập tệp CSV thay bảng dữ liệu, xóa thay đổi cục bộ, xuất nhật ký</span><span></span></li>
+          </ul>
+          <p class="ro" style="margin-top:10px">Phân quyền ở đây chỉ giới hạn thao tác trên trình duyệt. Kiểm soát truy cập thực sự phải đặt ở máy chủ nội bộ (đăng nhập tài khoản công ty). Xem HUONG_DAN_QUAN_TRI.md.</p>
+        </div>
+        <div class="card"><h3>Nhập, xuất dữ liệu</h3>
+          <div class="edit">
+            <label>Bảng dữ liệu
+              <select id="impTable">
+                <option value="thu_tuc">thu_tuc – Danh mục thủ tục</option>
+                <option value="cong_quyet_dinh">cong_quyet_dinh – Cổng quyết định</option>
+                <option value="van_ban">van_ban – Văn bản pháp lý</option>
+                <option value="ma_tran_phap_ly">ma_tran_phap_ly – Ma trận pháp lý</option>
+                <option value="rui_ro">rui_ro – Rủi ro</option>
+                <option value="ke_hoach">ke_hoach – Kế hoạch</option>
+              </select></label>
+            <label>Tệp CSV (UTF-8, cùng tên cột với tệp mẫu) <input type="file" id="impFile" accept=".csv,text/csv"></label>
+            <div style="display:flex; gap:8px; flex-wrap:wrap">
+              <button class="btn pri sm" id="impBtn">Nhập vào trình duyệt</button>
+              <button class="btn sm" id="expTable">Xuất bảng hiện hành (CSV)</button>
+              <button class="btn sm" id="resetLocal">Xóa thay đổi cục bộ</button>
+            </div>
+            <span id="impMsg" class="ro"></span>
+          </div>
+        </div>
+      </div>
+      <div class="card"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px"><h3 style="margin:0">Nhật ký cập nhật</h3><button class="btn sm" id="expLog">Xuất nhật ký (CSV)</button></div>
+        <div class="tbl" style="max-height:420px"><table id="tLog"></table></div></div>
+    </section>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <header><div><div class="code" id="dCode"></div><h3 id="dTitle"></h3></div><button type="button" id="dClose" aria-label="Đóng">×</button></header>
+  <div class="body" id="dBody"></div>
+</aside>
+
+<!-- Dữ liệu tách riêng khỏi giao diện: sinh từ data/*.csv bằng tools/build_data.py -->
+<script src="data/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
